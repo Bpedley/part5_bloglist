@@ -1,0 +1,10 @@
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlZhc3lhMzIyIiwiaWQiOiI1ZjZmYWFjODg2NTM5ODMyMzQzOTNjNjQiLCJpYXQiOjE2MDExNTM3NTh9.9FMi0G8vhIyAiJkSoWzekV5c_pg62HzWPnj3TdRa-dY
+
+{
+  "title": "How to Build HTML Forms Right: Semantics",
+  "url": "https:w//stegosource.com/how-to-build-html-forms-right-semantics/",
+  "author": "Audstin",
+  "userId": "5f6faac88653983234393c64"
+}
