@@ -111,13 +111,11 @@ describe("Blog app", function () {
       it("blogs are ordered according to likes", function () {
         cy.get("#blog")
           .first()
-          .contains("How to Build HTML Forms Right Austin");
-
-        cy.get("#blog").first().next().contains("React Dan Abramov");
-
-        cy.get("#blog")
-          .first()
+          .contains("How to Build HTML Forms Right Austin")
+          .parent()
           .next()
+          .contains("React Dan Abramov")
+          .parent()
           .next()
           .contains("Clipping and Masking in CSS Chris Coyier");
       });
@@ -127,13 +125,11 @@ describe("Blog app", function () {
           cy.login({ username: "root", password: "secret" });
         });
 
-        it("can't delete the blog and delete button is missing", function () {
+        it.only("can't delete the blog and delete button is missing", function () {
           cy.contains("React Dan Abramov")
-            .parent()
             .find("#showDetails")
             .click()
-            .parent()
-            .parent()
+            .parentsUntil("#blogs")
             .should("not.contain", "delete");
         });
       });
